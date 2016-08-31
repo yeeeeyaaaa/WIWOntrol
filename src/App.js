@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 //import ListDevices from './ListDevices';
 import ThumbnailList from './ThumbnailList';
-//import Api from './utils/Api';
+import Api from './utils/Api';
 import './App.css';
 
 var options = {
@@ -36,18 +36,20 @@ class App extends Component {
     //        searchResults: options
     //    });
     //}
-    //componentDidMount() {
-    //    //// eslint-disable-next-line
-    //    //this.serverRequest = $.get(this.props.source, function (result) {
-    //    //    //var searchResults = result[0];
-    //    //    this.setState({
-    //    //        searchResults: this.serverRequest.results
-    //    //    });
-    //    //}.bind(this));
-    //    this.setState({
-    //        searchResults: options
-    //    });
-    //}
+    componentDidMount() {
+        //// eslint-disable-next-line
+        //this.serverRequest = $.get(this.props.source, function (result) {
+        //    //var searchResults = result[0];
+        //    this.setState({
+        //        searchResults: this.serverRequest.results
+        //    });
+        //}.bind(this));
+        this.setState({
+            searchResults: Api.get('devices'),
+            open: 'show'
+        });
+        console.log('component mount');
+    }
 
     componentWillUnmount() {
         this.serverRequest.abort();
