@@ -4,9 +4,9 @@ import ThumbnailDevice from './ThumbnailDevice';
 
 class ThumbnailList extends Component {
     render() {
-        if (this.props.data[0] === undefined)
-            return 'Not Found';
-
+        if (this.props.data === undefined || this.props.data[0] === undefined) {
+            return <div>Not Found</div>;
+        }
         var props = this.props.data[0];
         var list = Object.keys(props).map(function (key) {
             var item = props[key];

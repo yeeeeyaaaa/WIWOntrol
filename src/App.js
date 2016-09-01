@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 //import ListDevices from './ListDevices';
 import ThumbnailList from './ThumbnailList';
-import Api from './utils/Api';
+//import Api from './utils/Api';
+import DeviceStore from './Stores/device-store';
 import './App.css';
 
 var options = {
@@ -36,6 +37,13 @@ class App extends Component {
     //        searchResults: options
     //    });
     //}
+
+    constructor(){
+        super();
+        this.SetState = [{
+            devices: []
+        }];
+    }
     componentDidMount() {
         //// eslint-disable-next-line
         //this.serverRequest = $.get(this.props.source, function (result) {
@@ -44,10 +52,22 @@ class App extends Component {
         //        searchResults: this.serverRequest.results
         //    });
         //}.bind(this));
-        this.setState({
-            searchResults: Api.get('devices'),
-            open: 'show'
-        });
+
+
+        //Api.get('devices').then(function(data){
+        //    this.setState({
+        //        searchResults: data.data,
+        //        open: 'show'
+        //    }.bind(this));
+        //    console.log('fetch done');
+        //});
+
+        DeviceStore.getDevices()
+            .then(function(){
+                this.setState({
+                    devices: DeviceStore.devices
+                });
+            }.bind(this));
         console.log('component mount');
     }
 
@@ -64,10 +84,18 @@ class App extends Component {
                     <h2>Welcome to WIWOntrol</h2>
                 </div>
 
-
-                <ThumbnailList {...options} />
+                {this.renderThumbnailDevices()}
             </div>
         );
+    }
+
+    renderThumbnailDevices(){
+        if (this.state !== undefined && this.state !== null){
+            return <ThumbnailList {...this.state.devices} />
+        }
+        else {
+            return 'Llista buida'
+        }
     }
 
 
