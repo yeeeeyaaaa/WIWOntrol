@@ -2,32 +2,31 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 //import ListDevices from './ListDevices';
 import ThumbnailList from './ThumbnailList';
-//import Api from './utils/Api';
 import DeviceStore from './Stores/device-store';
 import './App.css';
 
-var options = {
-    data:[{
-        accf2365521a:
-        {
-            macAddress: "accf2365521a",
-            macPadding: "202020202020",
-            type: "Socket",
-            ip: "192.168.1.34",
-            state: false,
-            name: "Socket accf2365521a"
-        },
-        accf2365e184:
-        {
-            macAddress: "accf2365e184",
-            macPadding: "202020202020",
-            type: "Socket",
-            ip: "192.168.1.33",
-            state: false,
-            name: "Socket accf2365e184"
-        }
-    }]
-};
+//var options = {
+//    data:[{
+//        accf2365521a:
+//        {
+//            macAddress: "accf2365521a",
+//            macPadding: "202020202020",
+//            type: "Socket",
+//            ip: "192.168.1.34",
+//            state: false,
+//            name: "Socket accf2365521a"
+//        },
+//        accf2365e184:
+//        {
+//            macAddress: "accf2365e184",
+//            macPadding: "202020202020",
+//            type: "Socket",
+//            ip: "192.168.1.33",
+//            state: false,
+//            name: "Socket accf2365e184"
+//        }
+//    }]
+//};
 
 
 class App extends Component {

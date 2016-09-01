@@ -8,7 +8,6 @@ module.exports = Reflux.createStore({
     getDevices(){
         return Api.get('devices')
             .then(function(json){
-                var data = json;
                 this.devices = {data: [json]};
                 //this.devices = json;
             }.bind(this));
