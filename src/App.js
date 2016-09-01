@@ -31,13 +31,6 @@ var options = {
 
 
 class App extends Component {
-
-    //componentDidUpdate(prevProps, prevState) {
-    //    this.setState({
-    //        searchResults: options
-    //    });
-    //}
-
     constructor(){
         super();
         this.SetState = [{
@@ -45,22 +38,6 @@ class App extends Component {
         }];
     }
     componentDidMount() {
-        //// eslint-disable-next-line
-        //this.serverRequest = $.get(this.props.source, function (result) {
-        //    //var searchResults = result[0];
-        //    this.setState({
-        //        searchResults: this.serverRequest.results
-        //    });
-        //}.bind(this));
-
-
-        //Api.get('devices').then(function(data){
-        //    this.setState({
-        //        searchResults: data.data,
-        //        open: 'show'
-        //    }.bind(this));
-        //    console.log('fetch done');
-        //});
 
         DeviceStore.getDevices()
             .then(function(){
