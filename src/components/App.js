@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import logo from '../css/logo.svg';
 //import ListDevices from './ListDevices';
 import ThumbnailList from './ThumbnailList';
-import DeviceStore from './Stores/device-store';
-import './App.css';
+import DeviceStore from '../stores/device-store';
+import '../../css/App.css';
 
 //var options = {
 //    data:[{

@@ -14,7 +14,9 @@ myHeaders.append('Content-Type', 'text/json');
 var myInit = { method: 'GET',
     headers: myHeaders,
     mode: 'cors',
-    cache: 'default' };
+    cache: 'default',
+    body: {}
+};
 
 module.exports = window.api = {
     get (url) {

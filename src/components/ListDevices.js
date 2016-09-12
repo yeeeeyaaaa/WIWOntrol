@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Device from './Device';
-import './Device.css';
+import '../../css/Device.css';
 
 class ListDevices extends Component {
   render() {
